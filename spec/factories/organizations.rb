@@ -8,8 +8,8 @@ FactoryBot.define do
     nav_image          { Faker::Avatar.image }
     url                { Faker::Internet.url }
     slug               { generate :slug }
-    github_username    { "org#{rand(10_000)}" }
-    twitter_username   { "org#{rand(10_000)}" }
+    github_username    { "org#{Faker::Number.number(digits: 5)}" }
+    twitter_username   { "org#{Faker::Number.number(digits: 5)}" }
     bg_color_hex       { Faker::Color.hex_color }
     text_color_hex     { Faker::Color.hex_color }
     proof              { Faker::Hipster.sentence }
