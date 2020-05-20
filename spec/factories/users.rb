@@ -8,11 +8,11 @@ FactoryBot.define do
 
   factory :user do
     name                         { Faker::Name.name }
-    email                        { generate :email }
-    username                     { generate :username }
+    email                        { Faker::Internet.email }
+    username                     { Faker::Internet.username }
     profile_image                { Rack::Test::UploadedFile.new(image_path, "image/jpeg") }
-    twitter_username             { generate :twitter_username }
-    github_username              { generate :github_username }
+    twitter_username             { Faker::Internet.username }
+    github_username              { Faker::Internet.username }
     summary                      { Faker::Lorem.paragraph[0..rand(190)] }
     website_url                  { Faker::Internet.url }
     confirmed_at                 { Time.current }
