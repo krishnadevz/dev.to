@@ -4,10 +4,12 @@ RSpec.describe "Admin manages organizations", type: :system do
   let(:admin) { create(:user, :super_admin) }
   let(:organization) { create(:organization) }
 
-  before { sign_in admin }
+  before { puts sign_in admin }
 
   context "when searching for organizations" do
     it "searches for organizations" do
+      puts admin.roles.pluck(:name)
+      puts admin.id
       create_list :organization, 5
       visit internal_organizations_path
 

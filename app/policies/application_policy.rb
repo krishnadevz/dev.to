@@ -2,6 +2,10 @@ class ApplicationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
+    puts "*"* 100
+    user&.attributes
+    record
+    puts "*"* 100
     raise Pundit::NotAuthorizedError, "You must be logged in" unless user
 
     @user = user
